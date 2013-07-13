@@ -1,10 +1,11 @@
 1
-26
+31
 images/0-in.png
 images/0-out.png
 images/1-out.png
 images/3-in.png
 images/3-out.png
+images/add_to_contacts.png
 images/bb_action_logout.png
 images/bb_icon_points.png
 images/bb_icon_sim.png
@@ -12,6 +13,10 @@ images/bb_icon_topup.png
 images/bb_icon_usage.png
 images/checked.png
 images/down.png
+images/ic_call.png
+images/ic_copy.png
+images/ic_textmessage.png
+images/ic_view_contact.png
 images/lock.png
 images/up.png
 LoginSheet.qml

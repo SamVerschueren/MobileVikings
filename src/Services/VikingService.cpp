@@ -216,6 +216,8 @@ void VikingService::usageLoaded(QNetworkReply* reply) {
         ContactSearchFilters filter;
         filter.setLimit(1);
 
+        Contact emptyContact;
+
         Q_FOREACH(const QVariant &u, list) {
             QVariantMap data = u.value<QVariantMap>();
 
@@ -238,7 +240,7 @@ void VikingService::usageLoaded(QNetworkReply* reply) {
                 QString number = usage->getTo();
 
                 if(phoneCache.contains(number)) {
-                    usage->setTo(phoneCache.value(number, number));
+                    usage->setContact(phoneCache.value(number));
                 }
                 else if(number == "9997") {
                     usage->setTo(tr("Voicemail"));
@@ -249,12 +251,12 @@ void VikingService::usageLoaded(QNetworkReply* reply) {
                     QList<Contact> contactList = contactService.searchContactsByPhoneNumber(filter);
 
                     if(contactList.size() > 0) {
-                        phoneCache.insert(number, contactList.at(0).displayName());
+                        phoneCache.insert(number, contactList.at(0));
 
-                        usage->setTo(contactList.at(0).displayName());
+                        usage->setContact(contactList.at(0));
                     }
                     else {
-                        phoneCache.insert(number, number);
+                        phoneCache.insert(number, emptyContact);
                     }
                 }
             }

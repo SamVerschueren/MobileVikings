@@ -19,17 +19,17 @@
         <translation>Nom d&apos;utilisateur</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="62"/>
+        <location filename="../assets/LoginSheet.qml" line="63"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="96"/>
+        <location filename="../assets/LoginSheet.qml" line="97"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="97"/>
+        <location filename="../assets/LoginSheet.qml" line="98"/>
         <source>An unknown error occured</source>
         <translation>Une erreur inconnue s&apos;est produite</translation>
     </message>
@@ -93,17 +93,47 @@
 <context>
     <name>UsagePage</name>
     <message>
-        <location filename="../assets/UsagePage.qml" line="134"/>
+        <location filename="../assets/UsagePage.qml" line="172"/>
+        <source>Unknown</source>
+        <translation>Inconnu</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="176"/>
+        <source>Send Text Message</source>
+        <translation>Envoyer un message texte</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="181"/>
+        <source>Call</source>
+        <translation>Appeler</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="186"/>
+        <source>View Contact</source>
+        <translation>Afficher le contact</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="186"/>
+        <source>Add to Contact</source>
+        <translation>Ajouter aux contacts</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="191"/>
+        <source>Copy Number</source>
+        <translation>Copier le numéro</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="274"/>
         <source>No usage data</source>
         <translation>Pas de données</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="135"/>
+        <location filename="../assets/UsagePage.qml" line="275"/>
         <source>There is no usage data available.</source>
         <translation>Il n&apos;y a pas des données disponibles pour votre usage.</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="144"/>
+        <location filename="../assets/UsagePage.qml" line="284"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>

@@ -49,6 +49,7 @@ Sheet {
                     text: loginVM.username
                     hintText: qsTr("Username")
                     inputMode: TextFieldInputMode.EmailAddress
+                    input.submitKey: SubmitKey.Next
                     bottomMargin: 20
                     onTextChanging: {
                         cmdLogin.enabled = text.trim() != "" && txtPassword.text.trim() != ""

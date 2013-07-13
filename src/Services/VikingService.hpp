@@ -38,7 +38,7 @@ class VikingService : public QObject {
 
         QByteArray createAuthToken(const QString& username, const QString& password) const;
 
-        QHash<QString, QString> phoneCache;
+        QMap<QString, Contact> phoneCache;
 
     public:
         VikingService();

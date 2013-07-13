@@ -19,17 +19,17 @@
         <translation>Gebruikersnaam</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="62"/>
+        <location filename="../assets/LoginSheet.qml" line="63"/>
         <source>Password</source>
         <translation>Wachtwoord</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="96"/>
+        <location filename="../assets/LoginSheet.qml" line="97"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../assets/LoginSheet.qml" line="97"/>
+        <location filename="../assets/LoginSheet.qml" line="98"/>
         <source>An unknown error occured</source>
         <translation>Er is een onbekende fout opgetreden.</translation>
     </message>
@@ -93,17 +93,47 @@
 <context>
     <name>UsagePage</name>
     <message>
-        <location filename="../assets/UsagePage.qml" line="134"/>
+        <location filename="../assets/UsagePage.qml" line="172"/>
+        <source>Unknown</source>
+        <translation>Onbekend</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="176"/>
+        <source>Send Text Message</source>
+        <translation>Tekstbericht verzenden</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="181"/>
+        <source>Call</source>
+        <translation>Oproep</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="186"/>
+        <source>View Contact</source>
+        <translation>Contactpersoon bekijken</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="186"/>
+        <source>Add to Contact</source>
+        <translation>Toevoegen aan contactpersonen</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="191"/>
+        <source>Copy Number</source>
+        <translation>Nummer kopiëren</translation>
+    </message>
+    <message>
+        <location filename="../assets/UsagePage.qml" line="274"/>
         <source>No usage data</source>
         <translation>Geen gegevens</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="135"/>
+        <location filename="../assets/UsagePage.qml" line="275"/>
         <source>There is no usage data available.</source>
         <translation>Er zijn nog geen gegevens beschikbaar over uw gebruik.</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="144"/>
+        <location filename="../assets/UsagePage.qml" line="284"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>

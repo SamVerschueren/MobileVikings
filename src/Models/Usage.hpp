@@ -8,9 +8,12 @@
 #ifndef USAGE_HPP_
 #define USAGE_HPP_
 
+#include <bb/pim/contacts/Contact>
 #include <QDateTime>
 
 #include "UsageType.hpp"
+
+using namespace bb::pim::contacts;
 
 class Usage {
 
@@ -24,6 +27,7 @@ class Usage {
         bool incoming;
         bool superOnNet;
         UsageType type;
+        Contact contact;
 
     public:
         Usage();
@@ -54,6 +58,9 @@ class Usage {
 
         void setType(const UsageType& type);
         UsageType getType() const;
+
+        void setContact(const Contact& contact);
+        Contact getContact() const;
 };
 
 #endif /* USAGE_HPP_ */

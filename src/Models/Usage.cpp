@@ -82,3 +82,11 @@ void Usage::setType(const UsageType& type) {
 UsageType Usage::getType() const {
     return this->type;
 }
+
+void Usage::setContact(const Contact& contact) {
+    this->contact = contact;
+}
+
+Contact Usage::getContact() const {
+    return this->contact;
+}
