@@ -232,6 +232,7 @@ Page {
         SimBalanceViewModel {
             id: simVM
             service: vikingService
+            msisdn: mainVM.title
             onLoadCompleted: {
                 if(message == "") {
                     simBalanceContainer.visible = true

@@ -6,6 +6,8 @@
  */
 
 #include "MainViewModel.hpp"
+#include <bb/cascades/Application>
+using namespace bb::cascades;
 
 /**
  * Creates a new instance of the <em>MainViewModel</em>.
@@ -50,7 +52,7 @@ void MainViewModel::msisdnsLoaded(const QString& message, const QList<Msisdn*>& 
 
     QString msisdnSetting = this->settings->value("msisdn", "").toString();
 
-    Q_FOREACH(const Msisdn* msisdn, msisdns) {
+    foreach(const Msisdn* msisdn, msisdns) {
         MsisdnViewModel* vm = new MsisdnViewModel(msisdn);
 
         if(this->msisdnDataModel->size() == 0) {
@@ -88,12 +90,15 @@ QString MainViewModel::getTitle() const {
  * emit the signOutCompleted signal.
  */
 Q_INVOKABLE void MainViewModel::signOut() {
+    qDebug() << "Sign out";
+
     this->settings->clear();
 
     this->selectedMsisdn = 0;
 
-    emit titleChanged(this->getTitle());
+    Application::instance()->setCover(0);
 
+    emit titleChanged(this->getTitle());
     emit signOutCompleted();
 }
 

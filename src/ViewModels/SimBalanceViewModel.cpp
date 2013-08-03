@@ -6,8 +6,14 @@
  */
 
 #include <QDebug>
+#include <bb/cascades/Application>
+#include <bb/cascades/QmlDocument>
+#include <bb/cascades/Container>
+#include <bb/cascades/SceneCover>
 
 #include "SimBalanceViewModel.hpp"
+
+using namespace bb::cascades;
 
 SimBalanceViewModel::SimBalanceViewModel() : loaded(false) {
     this->settings = new QSettings("samver", "bbVikings", this);
@@ -51,6 +57,10 @@ QString SimBalanceViewModel::getData() const {
     return this->data;
 }
 
+void SimBalanceViewModel::setMsisdn(const QString& msisdn) {
+    this->msisdn = msisdn;
+}
+
 Q_INVOKABLE void SimBalanceViewModel::loadSimBalance() {
     qDebug() << "SimBalanceViewModel::loadSimBalance";
 
@@ -91,6 +101,18 @@ void SimBalanceViewModel::simBalanceLoaded(const QString& message, SimBalance* b
         emit smsSuperOnNetChanged(this->smsSuperOnNet);
         emit voiceSuperOnNetChanged(this->voiceSuperOnNet);
         emit dataChanged(this->data);
+    }
+
+    QmlDocument *qmlCover = QmlDocument::create("asset:///Cover.qml").parent(this);
+
+    if (!qmlCover->hasErrors()) {
+        Container *coverContainer = qmlCover->createRootObject<Container>();
+        coverContainer->setProperty("title", this->msisdn);
+        coverContainer->setProperty("credits", this->credits);
+        coverContainer->setProperty("expiry", this->validUntil.date().toString(Qt::SystemLocaleShortDate));
+        SceneCover *sceneCover = SceneCover::create().content(coverContainer);
+
+        Application::instance()->setCover(sceneCover);
     }
 
     emit loadCompleted(message);

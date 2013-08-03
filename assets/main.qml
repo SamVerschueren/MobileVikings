@@ -72,11 +72,6 @@ TabbedPane {
         MainViewModel {
             id: mainVM
             service: vikingService
-            onMsisdnCompleted: {
-                for(var i=0; i<list.length; i++) {
-                    settingsSheet.addOption(list[i].alias)
-                }
-            }
             onMsisdnChanged: {
                 simBalancePage.reset();
                 usagePage.reset();

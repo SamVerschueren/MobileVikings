@@ -67,7 +67,7 @@
         <translation>Date d&apos;expiration</translation>
     </message>
     <message>
-        <location filename="../assets/SimBalance.qml" line="243"/>
+        <location filename="../assets/SimBalance.qml" line="244"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
@@ -93,47 +93,47 @@
 <context>
     <name>UsagePage</name>
     <message>
-        <location filename="../assets/UsagePage.qml" line="172"/>
+        <location filename="../assets/UsagePage.qml" line="101"/>
         <source>Unknown</source>
         <translation>Inconnu</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="176"/>
+        <location filename="../assets/UsagePage.qml" line="105"/>
         <source>Send Text Message</source>
         <translation>Envoyer un message texte</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="181"/>
+        <location filename="../assets/UsagePage.qml" line="110"/>
         <source>Call</source>
         <translation>Appeler</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="186"/>
+        <location filename="../assets/UsagePage.qml" line="115"/>
         <source>View Contact</source>
         <translation>Afficher le contact</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="186"/>
+        <location filename="../assets/UsagePage.qml" line="115"/>
         <source>Add to Contact</source>
         <translation>Ajouter aux contacts</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="191"/>
+        <location filename="../assets/UsagePage.qml" line="120"/>
         <source>Copy Number</source>
         <translation>Copier le numéro</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="274"/>
+        <location filename="../assets/UsagePage.qml" line="286"/>
         <source>No usage data</source>
         <translation>Pas de données</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="275"/>
+        <location filename="../assets/UsagePage.qml" line="287"/>
         <source>There is no usage data available.</source>
         <translation>Il n&apos;y a pas des données disponibles pour votre usage.</translation>
     </message>
     <message>
-        <location filename="../assets/UsagePage.qml" line="284"/>
+        <location filename="../assets/UsagePage.qml" line="296"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>

@@ -94,117 +94,129 @@ Page {
                         Container {
                             id: root
 
+                            layout: DockLayout { }
+
+                            contextActions: [
+                                ActionSet {
+                                    title: ListItemData.contact == "" ? qsTr("Unknown") : ListItemData.contact
+                                    subtitle: ListItemData.to
+                                    actions: [
+                                        ActionItem {
+                                            title: qsTr("Send Text Message")
+                                            imageSource: "asset:///images/ic_textmessage.png"
+                                            onTriggered: ListItemData.sendText()
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Call")
+                                            imageSource: "asset:///images/ic_call.png"
+                                            onTriggered: ListItemData.call()
+                                        },
+                                        ActionItem {
+                                            title: ListItemData.contact == "" ? qsTr("Add to Contact") : qsTr("View Contact")
+                                            imageSource: ListItemData.contact == "" ? "asset:///images/add_to_contacts.png" : "asset:///images/ic_view_contact.png"
+                                            onTriggered: ListItemData.viewOrAddContact()
+                                        },
+                                        ActionItem {
+                                            title: qsTr("Copy Number")
+                                            imageSource: "asset:///images/ic_copy.png"
+                                            onTriggered: ListItemData.copyNumber()
+                                        }
+                                    ]
+                                }
+                            ]
+
                             Container {
-                                preferredHeight: 5
-                                background: root.ListItem.active || root.ListItem.selected ? Color.create("#CC00A8DF") : Color.Transparent
+                                id: background
+                                background: Color.create("#ff00a7de")
+                                verticalAlignment: VerticalAlignment.Fill
                                 horizontalAlignment: HorizontalAlignment.Fill
+                                opacity: root.ListItem.active || root.ListItem.selected ? 0.4 : 0
                             }
-                            
+
                             Container {
-                                layout: StackLayout {
-                                    orientation: LayoutOrientation.LeftToRight
+                                Container {
+                                    preferredHeight: 5
+                                    background: root.ListItem.active || root.ListItem.selected ? Color.create("#ff00a7de") : Color.Transparent
+                                    horizontalAlignment: HorizontalAlignment.Fill
                                 }
 
                                 Container {
-                                    preferredWidth: 5
-                                    background: root.ListItem.active || root.ListItem.selected ? Color.create("#CC00A8DF") : Color.Transparent
-                                    verticalAlignment: VerticalAlignment.Fill
-                                }
-
-                                Container {
-                                    layoutProperties: StackLayoutProperties {
-                                        spaceQuota: 1.0
-                                    }
-                                    
-                                    topPadding: 5.0
-                                    rightPadding: 5.0
-                                    leftPadding: 5.0
-                                    bottomPadding: 5.0
-
                                     layout: StackLayout {
                                         orientation: LayoutOrientation.LeftToRight
                                     }
-                                    
-                                    ImageView {
-                                        imageSource: "asset:///images/" + ListItemData.statusImage
-                                        rightMargin: 20.0
+
+                                    Container {
+                                        preferredWidth: 5
+                                        background: root.ListItem.active || root.ListItem.selected ? Color.create("#ff00a7de") : Color.Transparent
+                                        verticalAlignment: VerticalAlignment.Fill
                                     }
 
                                     Container {
-                                        Label {
-                                            text: ListItemData.contact == "" ? ListItemData.to : ListItemData.contact
-                                        }
-
-                                        Label {
-                                            preferredWidth: 300.0
-                                            text: Qt.formatDateTime(ListItemData.start)
-                                            textStyle.fontSize: FontSize.XSmall
-                                            textStyle.color: Color.Gray
-                                            textStyle.fontWeight: FontWeight.W100
-                                        }
-                                    }
-
-                                    Label {
-                                        text: ListItemData.duration
-                                        textStyle.fontSize: FontSize.XSmall
-                                        textStyle.color: Color.Gray
-                                        textStyle.fontWeight: FontWeight.W100
-                                        verticalAlignment: VerticalAlignment.Bottom
-                                    }
-
-                                    Label {
-                                        text: ListItemData.price
                                         layoutProperties: StackLayoutProperties {
                                             spaceQuota: 1.0
                                         }
-                                        textStyle.textAlign: TextAlign.Right
+
+                                        topPadding: 5.0
+                                        rightPadding: 5.0
+                                        leftPadding: 5.0
+                                        bottomPadding: 5.0
+
+                                        layout: StackLayout {
+                                            orientation: LayoutOrientation.LeftToRight
+                                        }
+
+                                        ImageView {
+                                            imageSource: "asset:///images/" + ListItemData.statusImage
+                                            rightMargin: 20.0
+                                        }
+
+                                        Container {
+                                            Label {
+                                                text: ListItemData.contact == "" ? ListItemData.to : ListItemData.contact
+                                            }
+
+                                            Label {
+                                                preferredWidth: 300.0
+                                                text: Qt.formatDateTime(ListItemData.start)
+                                                textStyle.fontSize: FontSize.XSmall
+                                                textStyle.color: Color.Gray
+                                                textStyle.fontWeight: FontWeight.W100
+                                            }
+                                        }
+
+                                        Label {
+                                            text: ListItemData.duration
+                                            textStyle.fontSize: FontSize.XSmall
+                                            textStyle.color: Color.Gray
+                                            textStyle.fontWeight: FontWeight.W100
+                                            verticalAlignment: VerticalAlignment.Bottom
+                                        }
+
+                                        Label {
+                                            text: ListItemData.price
+                                            layoutProperties: StackLayoutProperties {
+                                                spaceQuota: 1.0
+                                            }
+                                            textStyle.textAlign: TextAlign.Right
+                                        }
+                                    }
+
+                                    Container {
+                                        preferredWidth: 5
+                                        background: root.ListItem.active || root.ListItem.selected ? Color.create("#ff00a7de") : Color.Transparent
+                                        verticalAlignment: VerticalAlignment.Fill
                                     }
                                 }
 
                                 Container {
-                                    preferredWidth: 5
-                                    background: root.ListItem.active || root.ListItem.selected ? Color.create("#CC00A8DF") : Color.Transparent
-                                    verticalAlignment: VerticalAlignment.Fill
+                                    preferredHeight: 5
+                                    background: root.ListItem.active || root.ListItem.selected ? Color.create("#ff00a7de") : Color.Transparent
+                                    horizontalAlignment: HorizontalAlignment.Fill
                                 }
 
-                                contextActions: [
-                                    ActionSet {
-                                        title: ListItemData.contact == "" ? qsTr("Unknown") : ListItemData.contact
-                                        subtitle: ListItemData.to
-                                        actions: [
-                                            ActionItem {
-                                                title: qsTr("Send Text Message")
-                                                imageSource: "asset:///images/ic_textmessage.png"
-                                                onTriggered: ListItemData.sendText()
-                                            },
-                                            ActionItem {
-                                                title: qsTr("Call")
-                                                imageSource: "asset:///images/ic_call.png"
-                                                onTriggered: ListItemData.call()
-                                            },
-                                            ActionItem {
-                                                title: ListItemData.contact == "" ? qsTr("Add to Contact") : qsTr("View Contact")
-                                                imageSource: ListItemData.contact == "" ? "asset:///images/add_to_contacts.png" : "asset:///images/ic_view_contact.png"
-                                                onTriggered: ListItemData.viewOrAddContact()
-                                            },
-                                            ActionItem {
-                                                title: qsTr("Copy Number")
-                                                imageSource: "asset:///images/ic_copy.png"
-                                                onTriggered: ListItemData.copyNumber()
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-
-                            Container {
-                                preferredHeight: 5
-                                background: root.ListItem.active || root.ListItem.selected ? Color.create("#CC00A8DF") : Color.Transparent
-                                horizontalAlignment: HorizontalAlignment.Fill
-                            }
-
-                            Divider {
-                                topMargin: -5.0
+                                Divider {
+                                    topMargin: -5.0
+                                }
                             }
                         }
                     }

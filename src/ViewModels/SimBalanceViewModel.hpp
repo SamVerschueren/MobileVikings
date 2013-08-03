@@ -25,6 +25,7 @@ class SimBalanceViewModel : public QObject {
     Q_PROPERTY(QString smsSuperOnNet READ getSmsSuperOnNet NOTIFY smsSuperOnNetChanged FINAL)
     Q_PROPERTY(QString voiceSuperOnNet READ getVoiceSuperOnNet NOTIFY voiceSuperOnNetChanged FINAL)
     Q_PROPERTY(QString data READ getData NOTIFY dataChanged FINAL)
+    Q_PROPERTY(QString msisdn WRITE setMsisdn FINAL)
 
     Q_SIGNALS:
         void validUntilChanged(const QDateTime& validUntil);
@@ -34,6 +35,7 @@ class SimBalanceViewModel : public QObject {
         void smsSuperOnNetChanged(const QString& smsSuperOnNet);
         void voiceSuperOnNetChanged(const QString& voiceSuperOnNet);
         void dataChanged(const QString& data);
+        void expiryDateChanged(const QString& expires);
 
     private:
         QSettings* settings;
@@ -49,6 +51,7 @@ class SimBalanceViewModel : public QObject {
         QString smsSuperOnNet;
         QString voiceSuperOnNet;
         QString data;
+        QString msisdn;
 
     public:
         SimBalanceViewModel();
@@ -63,6 +66,7 @@ class SimBalanceViewModel : public QObject {
         QString getSmsSuperOnNet() const;
         QString getVoiceSuperOnNet() const;
         QString getData() const;
+        void setMsisdn(const QString& msisdn);
 
         Q_INVOKABLE void loadSimBalance();
         Q_INVOKABLE void reset();

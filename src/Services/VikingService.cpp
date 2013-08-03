@@ -245,6 +245,9 @@ void VikingService::usageLoaded(QNetworkReply* reply) {
                 else if(number == "9997") {
                     usage->setTo(tr("Voicemail"));
                 }
+                else if(number == "") {
+                    usage->setTo(tr("Onbekend nummer"));
+                }
                 else {
                     filter.setSearchValue(number);
 
